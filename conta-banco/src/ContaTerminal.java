@@ -12,26 +12,33 @@ public class ContaTerminal {
 
         //Exibir a mensagem conta criada
         
-        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        try {
+            Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
         
-        System.out.println("Bem-Vindo a criação de conta no banco DIO");
-        // Usuario inesere número da conta
-        System.out.println("Digite o número da conta:");
-        int numeroConta = scanner.nextInt();
-        
-        // Usuario insere agencia
-        System.out.println("Digite o número da agência:");
-        String numeroAgencia = scanner.next();
-        scanner.nextLine();
+            System.out.println("Bem-Vindo a criação de conta no banco DIO");
+            // Usuario inesere número da conta
+            System.out.println("Digite o número da conta:");
+            int numeroConta = scanner.nextInt();
+            
+            // Usuario insere agencia
+            System.out.println("Digite o número da agência:");
+            String numeroAgencia = scanner.next();
+            scanner.nextLine();
+    
+            //Usuario insere seu nome
+            System.out.println("Digite seu nome:");
+            String nomeCliente = scanner.nextLine();
+            // saldo
+            double saldo = 237.48;
+    
+            // mensagem Final
+            System.out.println("Olá" + " " + nomeCliente + "," + " " + "obrigado por criar uma conta em nosso banco, sua agência é" + " " + numeroAgencia + "," + " " + "conta" + " " + numeroConta + " " + " e seu saldo" + " " + saldo + " " + "já está disponível para saque.");
+            scanner.close();
+            
+        } catch (Exception e) {
+        System.out.println(e);
+        }
 
-        //Usuario insere seu nome
-        System.out.println("Digite seu nome:");
-        String nomeCliente = scanner.nextLine();
-        // saldo
-        double saldo = 237.48;
-
-        // mensagem Final
-        System.out.println("Olá" + " " + nomeCliente + "," + " " + "obrigado por criar uma conta em nosso banco, sua agência é" + " " + numeroAgencia + "," + " " + "conta" + " " + numeroConta + " " + " e seu saldo" + " " + saldo + " " + "já está disponível para saque.");
-        scanner.close();
+       
     }
 }
